@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-mono), "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  
+  --color-ink: #0E1013;
+  --color-surface: #14171C;
+  --color-surface-elevated: #1A1D23;
+  --color-border-hairline: #2A2D33;
+  --color-text-primary: #F5F3EE;
+  --color-text-secondary: #6B7280;
+  --color-signal-green: #1B7A5A;
+  --color-brick-red: #B23B3B;
+  --color-brass-gold: #C9A24B;
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 6px;
+}
+
+:root, .dark {
+  --radius: 0.25rem;
+  --background: #0E1013;
+  --foreground: #F5F3EE;
+  --card: #14171C;
+  --card-foreground: #F5F3EE;
+  --popover: #14171C;
+  --popover-foreground: #F5F3EE;
+  --primary: #C9A24B;
+  --primary-foreground: #0E1013;
+  --secondary: #1A1D23;
+  --secondary-foreground: #F5F3EE;
+  --muted: #1A1D23;
+  --muted-foreground: #6B7280;
+  --accent: #1A1D23;
+  --accent-foreground: #C9A24B;
+  --destructive: #B23B3B;
+  --border: #2A2D33;
+  --input: #2A2D33;
+  --ring: #C9A24B;
+}
+
+@layer base {
+  * {
+    border-color: #2A2D33;
+  }
+  body {
+    background-color: #0E1013;
+    color: #F5F3EE;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  input, select, textarea {
+    font-family: inherit;
+  }
+}
+
+/* Enforce Tabular Figures on Monospace Data & Numbers */
+code, kbd, samp, pre, .font-mono, [data-mono] {
+  font-feature-settings: "tnum" 1, "zero" 1, "cv02" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Recessed Inset Well for terminal parameter blocks */
+.terminal-well {
+  background-color: #0A0C0E;
+  border: 1px solid #1F2228;
+  border-radius: 4px;
+}
+
+/* Remove default webkit scrollbar decor, make it hairline */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0E1013;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2D33;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3B3F48;
+}
+
+/* Site-wide CursorGrid background passthrough */
+main {
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
+}
+
+main > div.min-h-screen,
+main > div[class*="min-h-"] {
+  background-color: transparent !important;
+}
