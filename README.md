@@ -34,10 +34,10 @@ Traditional decentralized finance (DeFi) protocols (Aave, Compound, MakerDAO) ma
 │     BORROWER     │             │      LENDER      │             │     INSURER      │
 ├──────────────────┤             ├──────────────────┤             ├──────────────────┤
 │ • Requests loan  │             │ • Pre-funds pool │             │ • Stakes capital │
-│ • Tier proofs    │             │ • Risk criteria  │                 in Insurance   │
-│ • Gets AI score  │             │ • Earns interest │                 Pool           │
+│ • Tier proofs    │             │ • Risk criteria  │             |   in Insurance   │
+│ • Gets AI score  │             │ • Earns interest │             |   Pool           │
 │ • Repays debt    │             │   yield (APR)    │             │ • Collects 100bps│
-│ • Builds credit  │             │ • Capital insured│                 yield premium  │
+│ • Builds credit  │             │ • Capital insured│             |   yield premium  │
 │   on-chain       │             │   against loss   │             │ • Covers default │
 └──────────────────┘             └──────────────────┘             └──────────────────┘
 ```
@@ -69,7 +69,7 @@ Traditional decentralized finance (DeFi) protocols (Aave, Compound, MakerDAO) ma
 │  ┌───────────────────────────────┐     ┌────────────────────────────────┐  │
 │  │ Node.js / Express Gateway     │     │ Python FastAPI Microservice    │  │
 │  │ User Auth & Sessions          │◄───►│ Web3.py Contract Adapter       │  │
-│  │ Supabase Persistence (Postgres)│     │ ML Scoring Interface           │  │
+│  │Supabase Persistence (Postgres)│     │ ML Scoring Interface           │  │
 │  └───────────────────────────────┘     └──────────────┬─────────────────┘  │
 └───────────────────────────────────────────────────────┼────────────────────┘
                                                         │
